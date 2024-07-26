@@ -1,0 +1,10 @@
+.app-header {
+    grid-area: header;
+    background-color: rgb(177, 177, 177);
+    border: none;
+    border-radius: 1rem;
+}
+  
+.app-header img {
+    width: 3.5em;
+}

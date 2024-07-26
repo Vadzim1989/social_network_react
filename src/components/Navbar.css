@@ -1,0 +1,6 @@
+.app-nav {
+    grid-area: nav;
+    background-color: rgba(177, 177, 177, 0.217);
+    border: none;
+    border-radius: 1rem;
+}

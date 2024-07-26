@@ -8,24 +8,7 @@
   gap: 1px;
 }
 
-.app-header {
-  grid-area: header;
-  background-color: rgb(177, 177, 177);
-  border: none;
-  border-radius: 1rem;
-}
 
-.app-header img {
-  width: 3.5em;
-}
 
-.app-nav {
-  grid-area: nav;
-  background-color: rgba(177, 177, 177, 0.217);
-  border: none;
-  border-radius: 1rem;
-}
 
-.app-content {
-  grid-area: con;
-}
+
