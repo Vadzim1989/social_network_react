@@ -1,0 +1,12 @@
+.profile {
+  grid-area: con;
+}
+
+.item {
+  color:black;
+}
+
+.item img {
+  width: 3.5rem;
+  border-radius: 2rem;
+}

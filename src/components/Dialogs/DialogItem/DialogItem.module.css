@@ -1,0 +1,13 @@
+.dialog {
+    color: wheat;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.dialog a:hover,
+.dialog a.active {
+    color: gold;
+    text-decoration: none;
+}

@@ -1,0 +1,10 @@
+.photo {
+    width: 4rem;
+}
+.selectedPage {
+    color: gold;
+    font-weight: bold;
+}
+.pagination > span:hover {
+    cursor: pointer;
+}

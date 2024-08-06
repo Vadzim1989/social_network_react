@@ -1,0 +1,11 @@
+.profile {
+  grid-area: con;
+}
+
+.postBlock {
+  padding: 0.5rem;
+}
+
+.posts {
+  margin-top: 1.5rem;
+}
