@@ -1,31 +1,56 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import './App.css';
-// import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import DialogsContainer from './components/Dialogs/DialogsContainer';
-import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import LoginContainer from './components/Login/LoginContainer';
+import { connect, Provider } from 'react-redux';
+import { initializeApp } from './redux/app-reducer';
+import { compose } from 'redux';
+import Preloader from './components/common/preloader/Preloader';
+import store from './redux/redux-store';
 
-const App = (props) => {
-  return (
-    <BrowserRouter>
+
+const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
+const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
+
+class App extends React.Component {
+  componentDidMount() {
+    this.props.initializeApp();
+  }
+  render() {
+    if(!this.props.initialized) return <Preloader />
+    return (<BrowserRouter>
       <div className='app-wrapper'>
-        <HeaderContainer/>
-        <Navbar/>
+        <HeaderContainer />
+        <Navbar />
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path='/profile/:userId?' element={<ProfileContainer />}/>
-            <Route path='/dialogs/*' element={<DialogsContainer />}/>
-            <Route path='/users' element={<UsersContainer/>}/>
-            <Route path='/login' element={<LoginContainer/>}/>
+            <Route path='/profile/:userId?' element={<ProfileContainer />} />
+            <Route path='/dialogs/*' element={<Suspense fallback={<Preloader/>}><DialogsContainer /></Suspense>} />
+            <Route path='/users' element={<Suspense fallback={<Preloader/>}><UsersContainer /></Suspense>} />
+            <Route path='/login' element={<LoginContainer />} />
           </Routes>
         </div>
       </div>
-    </BrowserRouter>
-  );
+    </BrowserRouter>);
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  initialized: state.app.initialized,
+})
+
+const AppContainer = compose(
+  connect(mapStateToProps, {initializeApp}))(App);
+
+const SocialNetworkApp = (props) => {
+  return <React.StrictMode>
+    <Provider store={store}>
+      <AppContainer/>
+    </Provider>     
+  </React.StrictMode>
+}
+
+export default SocialNetworkApp;

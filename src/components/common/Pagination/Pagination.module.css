@@ -1,0 +1,18 @@
+.selectedPage {
+    color: gold;
+    font-weight: bold;
+}
+
+.pageNumber {
+    border: 1px black solid;
+    margin: .1rem;
+    padding: .05rem;
+}
+
+.pagination {
+    margin: .1rem;
+}
+
+.pagination > span:hover {
+    cursor: pointer;
+}
