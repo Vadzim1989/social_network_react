@@ -1,7 +1,7 @@
 import React, {Suspense} from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {HashRouter, Routes, Route} from 'react-router-dom';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import LoginContainer from './components/Login/LoginContainer';
@@ -21,7 +21,7 @@ class App extends React.Component {
   }
   render() {
     if(!this.props.initialized) return <Preloader />
-    return (<BrowserRouter>
+    return (<HashRouter basename={process.env.PUBLIC_URL}>
       <div className='app-wrapper'>
         <HeaderContainer />
         <Navbar />
@@ -34,7 +34,7 @@ class App extends React.Component {
           </Routes>
         </div>
       </div>
-    </BrowserRouter>);
+    </HashRouter>);
   }
 }
 
