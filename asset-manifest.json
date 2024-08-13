@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/social_network_react/static/css/main.30c9c66c.css",
-    "main.js": "/social_network_react/static/js/main.60a138c4.js",
+    "main.css": "/social_network_react/static/css/main.6bc7befa.css",
+    "main.js": "/social_network_react/static/js/main.ac5a21b9.js",
     "static/js/453.cfd59cba.chunk.js": "/social_network_react/static/js/453.cfd59cba.chunk.js",
     "static/css/162.9f8f9c30.chunk.css": "/social_network_react/static/css/162.9f8f9c30.chunk.css",
     "static/js/162.649aefae.chunk.js": "/social_network_react/static/js/162.649aefae.chunk.js",
-    "static/css/475.91dbea6e.chunk.css": "/social_network_react/static/css/475.91dbea6e.chunk.css",
+    "static/css/475.e7e5173e.chunk.css": "/social_network_react/static/css/475.e7e5173e.chunk.css",
     "static/js/475.f682450e.chunk.js": "/social_network_react/static/js/475.f682450e.chunk.js",
     "static/media/preload.gif": "/social_network_react/static/media/preload.c563da788f0993160daf.gif",
     "static/media/ava_img.png": "/social_network_react/static/media/ava_img.8f2eedb4941ac5d886e2.png",
     "index.html": "/social_network_react/index.html",
-    "main.30c9c66c.css.map": "/social_network_react/static/css/main.30c9c66c.css.map",
-    "main.60a138c4.js.map": "/social_network_react/static/js/main.60a138c4.js.map",
+    "main.6bc7befa.css.map": "/social_network_react/static/css/main.6bc7befa.css.map",
+    "main.ac5a21b9.js.map": "/social_network_react/static/js/main.ac5a21b9.js.map",
     "453.cfd59cba.chunk.js.map": "/social_network_react/static/js/453.cfd59cba.chunk.js.map",
     "162.9f8f9c30.chunk.css.map": "/social_network_react/static/css/162.9f8f9c30.chunk.css.map",
     "162.649aefae.chunk.js.map": "/social_network_react/static/js/162.649aefae.chunk.js.map",
-    "475.91dbea6e.chunk.css.map": "/social_network_react/static/css/475.91dbea6e.chunk.css.map",
+    "475.e7e5173e.chunk.css.map": "/social_network_react/static/css/475.e7e5173e.chunk.css.map",
     "475.f682450e.chunk.js.map": "/social_network_react/static/js/475.f682450e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.30c9c66c.css",
-    "static/js/main.60a138c4.js"
+    "static/css/main.6bc7befa.css",
+    "static/js/main.ac5a21b9.js"
   ]
 }
