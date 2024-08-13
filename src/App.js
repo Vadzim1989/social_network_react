@@ -16,25 +16,34 @@ const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsCo
 const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
 
 class App extends React.Component {
+  // catchAllUnhandledErrors = (promiseRejectionEvent) => {
+  //   console.error(promiseRejectionEvent);
+  // }
+
   componentDidMount() {
     this.props.initializeApp();
+    // window.addEventListener('unhandledrejection', this.catchAllUnhandledErrors);
   }
+
+  // componentWillUnmount() {
+  //   window.removeEventListener('unhandledrejection', this.catchAllUnhandledErrors);
+  // }
+
   render() {
-    if(!this.props.initialized) return <Preloader />
-    return (<HashRouter basename={process.env.PUBLIC_URL}>
+    if(!this.props.initialized) return <Preloader/>
+    return (
       <div className='app-wrapper'>
-        <HeaderContainer />
-        <Navbar />
+        <HeaderContainer/>
+        <Navbar/>
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path='/profile/:userId?' element={<ProfileContainer />} />
+            <Route path='/profile/:userId?' element={<ProfileContainer/>} />
             <Route path='/dialogs/*' element={<Suspense fallback={<Preloader/>}><DialogsContainer /></Suspense>} />
             <Route path='/users' element={<Suspense fallback={<Preloader/>}><UsersContainer /></Suspense>} />
-            <Route path='/login' element={<LoginContainer />} />
+            <Route path='/login' element={<LoginContainer/>} />
           </Routes>
         </div>
-      </div>
-    </HashRouter>);
+      </div>);
   }
 }
 
@@ -47,9 +56,11 @@ const AppContainer = compose(
 
 const SocialNetworkApp = (props) => {
   return <React.StrictMode>
-    <Provider store={store}>
-      <AppContainer/>
-    </Provider>     
+    <HashRouter>
+      <Provider store={store}>
+        <AppContainer/>
+      </Provider>   
+    </HashRouter>  
   </React.StrictMode>
 }
 

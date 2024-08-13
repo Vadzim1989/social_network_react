@@ -13,6 +13,7 @@
     margin: .1rem;
 }
 
-.pagination > span:hover {
+.selectedPage:hover,
+.pageNumber:hover {
     cursor: pointer;
 }

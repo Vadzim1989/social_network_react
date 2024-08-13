@@ -2,6 +2,7 @@
     grid-area: nav;
     background-color: rgba(77, 140, 159, 0.541);
     padding: 1rem;
+    min-height: 75vh;
 }
 
 .item a {
